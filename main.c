@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <time.h>
+#include <math.h>
 
 void	prime(int32_t *num, int32_t *vul, int32_t half_num)
 {
@@ -33,7 +34,7 @@ int32_t summ_prime_factors(int32_t num)
 
 	while (num != 1)
 	{
-		prime(&num, &vul, num / 2);
+		prime(&num, &vul, (int32_t)sqrt(num));
 		if (vul > 10)
 			vul = sumdigit(vul);
 		sum += vul;
